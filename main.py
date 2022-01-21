@@ -1,12 +1,20 @@
+from os.path import exists
+import json
+
+# TODO:
+# - make arguments optional for class?
+# - set up sqlalchemy
+# - move data to database
+# - implement search functions based on info
 
 class Entry:
-  def __init__(self, name, whisky_type, abv):
+  def __init__(self, name, whisky_type, abv, nose, palate, finish):
     self.name = name
     self.whisky_type = whisky_type
     self.abv = abv
-    self.nose = ["pear", "apple", "peach"]
-    self.palate = []
-    self.finish = []
+    self.nose = ["pear", "apple", "vanilla"]
+    self.palate = ["butter", "shortbread", "vanilla"]
+    self.finish = ["apple", "butter", "cream"]
 
   def print_info(self):
     """Prints formatted object info"""
@@ -30,15 +38,39 @@ def create_entry(name):
   entry = Entry(name)
   print(f"Created: {entry.name}")
 
-def create_json():
-  """Creates new json file if none present"""
+## may use sqlalchemy instead of json
+#
+#def write_to_json(entry):
+#  """Writes new entry to json file"""
+#  filename = "whisky.json"
+#  
+#  data = {
+#    entry.name: [
+#    "whisky_type": entry.whisky_type,
+#    "abv": entry.abv,
+#    "nose": entry.nose,
+#    "palate": entry.palate,
+#    "finish": entry.finish
+#    ]
+#    }
+#
+#  if exists(filename):
+#    with open(filename, 'a') as outfile:
+#      json.dump(data, outfile, indent=4)
+#    print(f"Entry written: {entry.name}")
+#  else:
+#    with open(filename, 'w') as outfile:
+#      json.dump(data, outfile, indent=4)
+#    print(f"File created: '{filename}'")
 
-def write_to_json():
-  """Writes new entry to json file"""
-
+def test():
+  nose = ["pear", "apple", "vanilla"]
+  palate = ["butter", "shortbread", "vanilla"]
+  finish = ["apple", "butter", "cream"]
+  ys = Entry("Yellow Spot", "Irish", 46.0, nose, palate, finish)
+  ys.print_info()
+  ys.print_notes()
 
 if __name__ == '__main__':
   introduction()
-  ys = Entry("Yellow Spot", "Irish", 46.0)
-  ys.print_info()
-  ys.print_notes()
+  test()

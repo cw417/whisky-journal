@@ -86,7 +86,7 @@ public class Entry
    * Prints object as formatted string
    */
   public void print() {
-    System.out.printf("\nName: %s\nAge: %d\nABV: %f%%\n", name, age, abv);
+    System.out.printf("\nName: %s\nAge: %d\nABV: %.2f%%\n", name, age, abv);
   }
 
 }

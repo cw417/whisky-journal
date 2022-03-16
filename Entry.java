@@ -1,9 +1,7 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Entry
 {
-  private String distiller;
   private String name;
   private String category;
   private double abv;
@@ -15,16 +13,14 @@ public class Entry
   private ArrayList<String> finish;
   private ArrayList<String> notes;
 
-  public Entry(String distiller, String name, double abv, String category) {
-    this.distiller = distiller;
+  public Entry(String name, int age, double abv, String category) {
     this.name = name;
+    this.age = age;
     this.abv = abv;
     this.category = category;
   }
 
-  public String getDistiller() {
-    return distiller;
-  }  
+  // getters
 
   public String getName() {
     return name;
@@ -66,9 +62,7 @@ public class Entry
     return notes;
   }
 
-  public void setDistiller(String distiller) {
-    this.distiller = distiller;
-  }
+  // setters
 
   public void setName(String name) {
     this.name = name;
@@ -84,6 +78,15 @@ public class Entry
 
   public void setScore(int score) {
     this.score = score;
+  }
+
+  // misc methods
+
+  /*
+   * Prints object as formatted string
+   */
+  public void print() {
+    System.out.printf("\nName: %s\nAge: %d\nABV: %f%%\n", name, age, abv);
   }
 
 }

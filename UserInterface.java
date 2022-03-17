@@ -64,6 +64,18 @@ public class UserInterface {
       else if (action.equalsIgnoreCase("ENTRIES")) {
         whiskyJournal.printEntries();
       }
+
+      else if (action.equalsIgnoreCase("ADDNOTES")) {
+        
+        String id = "";
+
+        // search by id or name
+        System.out.print("Enter ID#: ");
+        if (scanner.hasNextLine()) {
+          id = scanner.nextLine();
+        }
+        whiskyJournal.addInfo(id);
+      }
       System.out.print("\n>");
     }
 

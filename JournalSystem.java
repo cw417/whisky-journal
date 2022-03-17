@@ -36,6 +36,11 @@ public class JournalSystem {
       return true;
     }
 
+    public void addInfo() {
+      // add ifno with entry add methods
+
+    }
+
     /*
      * Prints all entries
      */

@@ -21,8 +21,10 @@ public class UserInterface {
 				System.out.print("\n>");
 				continue;
 			}
-			else if (action.equalsIgnoreCase("Q") || action.equalsIgnoreCase("QUIT"))
+
+			else if (action.equalsIgnoreCase("Q") || action.equalsIgnoreCase("QUIT")) {
 				return;
+      }
 
       else if (action.equalsIgnoreCase("ENTRY")) {
 
@@ -54,13 +56,22 @@ public class UserInterface {
         if (scanner.hasNextLine()) {
           category = scanner.nextLine();
         }
-        
-        whiskyJournal.createEntry(name, age, abv, category);
 
+        // TODO: Fix this
+        // I have no idea why this needs to run twice 
+        // If removed, it will skip asking for Category
+        if (scanner.hasNextLine()) {
+          category = scanner.nextLine();
+        }
+      
+        System.out.println(); 
+        whiskyJournal.createEntry(name, age, abv, category);
       }  
+
       else if (action.equalsIgnoreCase("ENTRIES")) {
         whiskyJournal.printEntries();
       }
+      System.out.print("\n>");
     }
 
   }

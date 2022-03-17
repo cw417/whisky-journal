@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class Entry
 {
@@ -12,16 +13,23 @@ public class Entry
   private ArrayList<String> palate;
   private ArrayList<String> finish;
   private ArrayList<String> notes;
+  private LocalDate date;
+  private int id;
 
-  public Entry(String name, int age, double abv, String category) {
+  public Entry(String name, int age, double abv, String category, int id) {
     this.name = name;
     this.age = age;
     this.abv = abv;
     this.category = category;
+    this.date = LocalDate.now();
+    this.id = id;
   }
 
   // getters
 
+  public int getId() {
+    return id;
+  }
   public String getName() {
     return name;
   }
@@ -40,6 +48,10 @@ public class Entry
 
   public int getScore() {
     return score;
+  }
+
+  public LocalDate getDate() {
+    return this.date;
   }
 
   public ArrayList<String> getMisc() {
@@ -80,13 +92,43 @@ public class Entry
     this.score = score;
   }
 
+  // add info methods
+
+  public void addMisc(String info) {
+    misc.add(info);
+  }
+
+  public void addNose(String info) {
+    nose.add(info);
+  }
+
+  public void addPalate(String info) {
+    palate.add(info);
+  }
+
+  public void addFinish(String info) {
+    finish.add(info);
+  }
+
+  public void addNotes(String info) {
+    notes.add(info);
+  }
+
+
   // misc methods
 
   /*
    * Prints object as formatted string
    */
   public void print() {
-    System.out.printf("\nName: %s\nAge: %d\nABV: %.2f%%\n", name, age, abv);
+    System.out.printf("\nName: %s \nAge: %d \nABV: %.2f%% \nDate: %s \nID#: %-3d\n", name, age, abv, date, id);
+  }
+
+  /*
+   * Prints tasting notes
+   */
+  public void printNotes() {
+    System.out.printf("Category: %s \nNose: %s \nPalate: %s \nFinish: %s \nNotes: %s \nMisc: %s", category, nose, palate, finish, notes, misc);
   }
 
 }

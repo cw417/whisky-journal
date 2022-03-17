@@ -74,6 +74,7 @@ public class UserInterface {
       System.out.print("\n>");
     }
 
+  scanner.close();
   }
   
 }

@@ -5,7 +5,9 @@ public class UserInterface {
   public static void main(String[] args) {
 
     System.out.println("Welcome to the Whisk(e)y Journal!");
-
+    System.out.println("Enter \"q\" or \"quit\" to exit.");
+    System.out.println("Enter \"help\" to see available commands.");
+    System.out.println();
     JournalSystem whiskyJournal = new JournalSystem();
 
     Scanner scanner = new Scanner(System.in);
@@ -78,6 +80,7 @@ public class UserInterface {
       }
 
       else if (action.equalsIgnoreCase("HELP")) {
+        System.out.println("\nCOMMANDS:\n");
         System.out.println("entries   -  print entries");
         System.out.println("entry     -  create new entry");
         System.out.println("q/quit    -  exit the program");

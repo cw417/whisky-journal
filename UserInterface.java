@@ -42,13 +42,13 @@ public class UserInterface {
         // get age
         System.out.print("Age: ");
         if (scanner.hasNextLine()) {
-          age = scanner.nextInt();
+          age = Integer.parseInt(scanner.nextLine());
         }
         
         // get name
         System.out.print("Alcohol %: ");
         if (scanner.hasNextLine()) {
-          abv = scanner.nextDouble();
+          abv = Double.parseDouble(scanner.nextLine());
         }
 
         // get category
@@ -57,13 +57,6 @@ public class UserInterface {
           category = scanner.nextLine();
         }
 
-        // TODO: Fix this
-        // I have no idea why this needs to run twice 
-        // If removed, it will skip asking for Category
-        if (scanner.hasNextLine()) {
-          category = scanner.nextLine();
-        }
-      
         System.out.println(); 
         whiskyJournal.createEntry(name, age, abv, category);
       }  

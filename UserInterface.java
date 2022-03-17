@@ -74,7 +74,14 @@ public class UserInterface {
         if (scanner.hasNextLine()) {
           id = scanner.nextLine();
         }
-        whiskyJournal.addInfo(id);
+        whiskyJournal.addInfo(Integer.parseInt(id));
+      }
+
+      else if (action.equalsIgnoreCase("HELP")) {
+        System.out.println("entries   -  print entries");
+        System.out.println("entry     -  create new entry");
+        System.out.println("q/quit    -  exit the program");
+        System.out.println("addnotes  -  add notes to existing entry");
       }
       System.out.print("\n>");
     }

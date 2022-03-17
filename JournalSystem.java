@@ -36,9 +36,9 @@ public class JournalSystem {
       return true;
     }
 
-    public void addInfo() {
+    public int addInfo(int id) {
       // add ifno with entry add methods
-
+      return 0;
     }
 
     /*

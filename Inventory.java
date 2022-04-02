@@ -1,4 +1,3 @@
-import java.net.Inet4Address;
 import java.util.HashMap;
 
 public class Inventory {

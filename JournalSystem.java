@@ -18,15 +18,17 @@ public class JournalSystem {
 
     }
 
-    /*
-     * Generates order number by incrementing the orderNumber variable
+    /**
+     * Generates order number by incrementing the orderNumber variable.
+     * @return id number
      */
     private int generateIdNumber() {
       return idNumber++;
     }
 
-    /*
+    /**
      * Create a new entry and add to entries array
+     * @return true if entry created successfully, else false
      */
     public boolean createEntry(String name, int age, double abv, String category) {
       Entry newEntry = new Entry(name, age, abv, category, generateIdNumber());
@@ -36,13 +38,18 @@ public class JournalSystem {
       return true;
     }
 
-    public int addInfo(int id) {
-      // add ifno with entry add methods
-      return 0;
+    /**
+     * Add additonal info to an existing entry.
+     * @param id id for entry
+     * @return true if info added successfully, else false
+     */
+    public boolean addInfo(int id) {
+      // add info with entry add methods
+      return true;
     }
 
-    /*
-     * Prints all entries
+    /**
+     * Print all journal entries.
      */
     public void printEntries() {
       for (Entry e: entries) {

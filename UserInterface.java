@@ -50,6 +50,10 @@ public class UserInterface {
         inventory.addItem(name, number);
       }
 
+      else if (action.equalsIgnoreCase("PRINTINV")) {
+        inventory.print();
+      }
+
       else if (action.equalsIgnoreCase("ENTRY")) {
 
         String name = "";
@@ -103,15 +107,19 @@ public class UserInterface {
 
       else if (action.equalsIgnoreCase("HELP")) {
         System.out.println("\nCOMMANDS:\n");
+        System.out.println("additem   -  add item to invenory");
+        System.out.println("addnotes  -  add notes to existing entry");
         System.out.println("entries   -  print entries");
         System.out.println("entry     -  create new entry");
+        System.out.println("help      -  access this menu");
         System.out.println("q/quit    -  exit the program");
-        System.out.println("addnotes  -  add notes to existing entry");
+        System.out.println("printinv  -  print inventory");
       }
+
       System.out.print("\n>");
     }
 
-  scanner.close();
+    scanner.close();
   }
   
 }

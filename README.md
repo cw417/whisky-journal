@@ -1,5 +1,7 @@
 # whisky-journal
+
 A journal for keeping notes on whisky.
 
-Written in python.
-Or maybe Java.
+Written in Java.
+
+Many thanks to my CS professor, Tim McInerney, for the Java knowledge and inspiration.

@@ -8,7 +8,9 @@ public class UserInterface {
     System.out.println("Enter \"q\" or \"quit\" to exit.");
     System.out.println("Enter \"help\" to see available commands.");
     System.out.println();
+
     JournalSystem whiskyJournal = new JournalSystem();
+    Inventory inventory = new Inventory();
 
     Scanner scanner = new Scanner(System.in);
     System.out.print(">");
@@ -26,6 +28,26 @@ public class UserInterface {
 
 			else if (action.equalsIgnoreCase("Q") || action.equalsIgnoreCase("QUIT")) {
 				return;
+      }
+
+      else if (action.equalsIgnoreCase("ADDITEM")) {
+        
+        String name = "";
+        int number = 0;
+
+        // get name
+        System.out.print("Name: ");
+        if (scanner.hasNextLine()) {
+          name = scanner.nextLine();
+        }
+
+        // get number
+        System.out.print("Number: ");
+        if (scanner.hasNextLine()) {
+          number = Integer.parseInt(scanner.nextLine());
+        }
+
+        inventory.addItem(name, number);
       }
 
       else if (action.equalsIgnoreCase("ENTRY")) {

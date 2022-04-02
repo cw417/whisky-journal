@@ -9,6 +9,11 @@ public class Inventory {
     inventory = new HashMap<String,Integer>();
   }
 
+  /**
+   * Return number of item in inventory.
+   * @param name name of item to search
+   * @return number of item in inventory
+   */
   public int getNumber(String name) {
     return inventory.get(name);
   }

@@ -3,10 +3,7 @@ import java.time.LocalDate;
 
 public class Entry
 {
-  private String name;
-  private String category;
-  private double abv;
-  private int age;
+  private Whisky whisky;
   private int score;
   private ArrayList<String> misc;
   private ArrayList<String> nose;
@@ -16,34 +13,16 @@ public class Entry
   private LocalDate date;
   private int id;
 
-  public Entry(String name, int age, double abv, String category, int id) {
-    this.name = name;
-    this.age = age;
-    this.abv = abv;
-    this.category = category;
+  public Entry(Whisky whisky, int id) {
+    this.whisky = whisky;
     this.date = LocalDate.now();
     this.id = id;
   }
 
   // getters
 
-  public int getId() {
-    return id;
-  }
-  public String getName() {
-    return name;
-  }
-
-  public String getCategory() {
-    return category;
-  }
-
-  public double getAbv() {
-    return abv;
-  }
-
-  public int getAge() {
-    return age;
+  public Whisky getWhisky() {
+    return whisky;
   }
 
   public int getScore() {
@@ -76,17 +55,6 @@ public class Entry
 
   // setters
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public void setAbv(double abv) {
-    this.abv = abv;
-  }
-
-  public void setAge(int age) {
-    this.age = age;
-  }
 
   public void setScore(int score) {
     this.score = score;

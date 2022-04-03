@@ -37,4 +37,20 @@ public class Whisky {
   public int getAge() {
     return age;
   }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setAbv(double abv) {
+    this.abv = abv;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  public void setScore(int score) {
+    this.score = score;
+  }
 }

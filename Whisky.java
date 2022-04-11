@@ -55,8 +55,7 @@ public class Whisky {
   }
 
   /**
-   * Returns true if two whiskies are equal.
-   * Whiskies are equal if their names are equal.
+   * Returns true if two whiskies have the same name.
    * @param other other whisky to compare
    */
   public boolean equals(Whisky other) {

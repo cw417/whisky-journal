@@ -101,6 +101,11 @@ public class Entry
   public void printNotes() {
   }
 
+  /**
+   * Returns true if two entries have the same id.
+   * @param other other entry to compare
+   * @return true if entries are equal
+   */
   public boolean equals(Entry other) {
     return (this.id == other.getId());
   }

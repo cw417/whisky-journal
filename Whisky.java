@@ -53,4 +53,13 @@ public class Whisky {
   public void setAge(int age) {
     this.age = age;
   }
+
+  /**
+   * Returns true if two whiskies are equal.
+   * Whiskies are equal if their names are equal.
+   * @param other other whisky to compare
+   */
+  public boolean equals(Whisky other) {
+    return (this.name.equals(other.getName()));
+  }
 }

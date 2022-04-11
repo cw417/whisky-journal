@@ -43,14 +43,30 @@ public class JournalSystem {
       newEntry.print();
     }
 
+    public Entry findEntry(int id) {
+      Entry entry = null;
+      for (Entry e: entries) {
+        if (e.getId() == id) {
+          entry = e;
+        }
+      }
+      if (entry != null) {
+        return entry;
+      }
+      else {
+        throw new EntryNotFoundException(
+          "Entry ID not found: " + id);
+      }
+    }
+
     /**
      * Add additonal info to an existing entry.
      * @param id id for entry
      * @return true if info added successfully, else false
      */
-    public boolean addInfo(int id) {
+    public void addInfo(int id, String nose, String palate, String finish) {
       // add info with entry add methods
-      return true;
+      Entry entry = findEntry(id);
     }
 
     /**
@@ -64,4 +80,11 @@ public class JournalSystem {
       }
       System.out.println();
     }
+}
+
+class EntryNotFoundException extends RuntimeException {
+
+  EntryNotFoundException(String message) {
+    super(message);
+  }
 }

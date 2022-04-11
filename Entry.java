@@ -53,6 +53,10 @@ public class Entry
     return notes;
   }
 
+  public int getId() {
+    return id;
+  }
+
   // setters
 
 
@@ -89,14 +93,12 @@ public class Entry
    * Prints object as formatted string
    */
   public void print() {
-    System.out.printf("\nName: %s \nAge: %d \nABV: %.2f%% \nDate: %s \nID#: %-3d\n", name, age, abv, date, id);
   }
 
   /*
    * Prints tasting notes
    */
   public void printNotes() {
-    System.out.printf("Category: %s \nNose: %s \nPalate: %s \nFinish: %s \nNotes: %s \nMisc: %s", category, nose, palate, finish, notes, misc);
   }
 
 }

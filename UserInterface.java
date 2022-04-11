@@ -102,7 +102,16 @@ public class UserInterface {
         if (scanner.hasNextLine()) {
           id = scanner.nextLine();
         }
-        whiskyJournal.addInfo(Integer.parseInt(id));
+        try{
+          // need to convert to add info
+          // will pass in strings to be added to each section
+          // need to get nose, palate, finish in loops
+          // then add them to string arrays
+          whiskyJournal.addInfo(Integer.parseInt(id));
+        }
+        catch (EntryNotFoundException ex) {
+          System.err.print(ex);
+        }
       }
 
       else if (action.equalsIgnoreCase("HELP")) {

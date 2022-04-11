@@ -43,16 +43,24 @@ public class JournalSystem {
       newEntry.print();
     }
 
+    /**
+     * Finds an entry based on specified id.
+     * @param id id of entry to return
+     * @return returns entry with matching id
+     */
     public Entry findEntry(int id) {
       Entry entry = null;
+      //find entry
       for (Entry e: entries) {
         if (e.getId() == id) {
           entry = e;
         }
       }
+      // if entry exists
       if (entry != null) {
         return entry;
       }
+      // else throw exception 
       else {
         throw new EntryNotFoundException(
           "Entry ID not found: " + id);

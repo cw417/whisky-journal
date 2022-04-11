@@ -101,4 +101,7 @@ public class Entry
   public void printNotes() {
   }
 
+  public boolean equals(Entry other) {
+    return (this.id == other.getId());
+  }
 }

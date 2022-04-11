@@ -26,11 +26,15 @@ public class UserInterface {
 				continue;
 			}
 
+      // misc functionality actions
+
 			else if (action.equalsIgnoreCase("Q") || action.equalsIgnoreCase("QUIT")) {
 				return;
       }
 
-      else if (action.equalsIgnoreCase("ADDITEM")) {
+      // inventory actions
+
+      else if (action.equalsIgnoreCase("ADDINV")) {
         
         String name = "";
         int number = 0;
@@ -53,6 +57,8 @@ public class UserInterface {
       else if (action.equalsIgnoreCase("PRINTINV")) {
         inventory.print();
       }
+
+      // entry actions
 
       else if (action.equalsIgnoreCase("ENTRY")) {
 
@@ -114,9 +120,11 @@ public class UserInterface {
         }
       }
 
+      // help menu
+
       else if (action.equalsIgnoreCase("HELP")) {
         System.out.println("\nCOMMANDS:\n");
-        System.out.println("additem   -  add item to invenory");
+        System.out.println("addinv    -  add item to invenory");
         System.out.println("addnotes  -  add notes to existing entry");
         System.out.println("entries   -  print entries");
         System.out.println("entry     -  create new entry");

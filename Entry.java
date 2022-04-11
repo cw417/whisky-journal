@@ -90,13 +90,13 @@ public class Entry
   // misc methods
 
   /*
-   * Prints object as formatted string
+   * Prints object as formatted string.
    */
   public void print() {
   }
 
   /*
-   * Prints tasting notes
+   * Prints tasting notes.
    */
   public void printNotes() {
   }

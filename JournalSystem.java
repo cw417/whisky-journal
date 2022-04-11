@@ -6,15 +6,20 @@ import java.util.ArrayList;
 public class JournalSystem {
 
     // create entry array to append to
-    private ArrayList<Entry> entries = new ArrayList<Entry>();
+    private ArrayList<Entry> entries;
 
     // create variable to use for generating order numbers
     private int idNumber = 0;
 
     public JournalSystem() {
+
+      this.entries = new ArrayList<Entry>();
       
+      // create whiskies
+      Whisky rb12 = new Whisky("Redbreast 12", "Irish", 12, 40.00); 
+
       // add entries
-      entries.add(new Entry("Redbreast 12", 12, 40.00, "Irish", generateIdNumber()));
+      entries.add(new Entry(rb12, generateIdNumber()));
 
     }
 
@@ -30,12 +35,12 @@ public class JournalSystem {
      * Create a new entry and add to entries array
      * @return true if entry created successfully, else false
      */
-    public boolean createEntry(String name, int age, double abv, String category) {
-      Entry newEntry = new Entry(name, age, abv, category, generateIdNumber());
+    public void createEntry(String name, int age, double abv, String category) {
+      Whisky whisky = new Whisky(name, category, age, abv);
+      Entry newEntry = new Entry(whisky, generateIdNumber());
       entries.add(newEntry);
       System.out.println("Created entry: ");
       newEntry.print();
-      return true;
     }
 
     /**

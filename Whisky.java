@@ -42,15 +42,15 @@ public class Whisky {
     this.name = name;
   }
 
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
   public void setAbv(double abv) {
     this.abv = abv;
   }
 
   public void setAge(int age) {
     this.age = age;
-  }
-
-  public void setScore(int score) {
-    this.score = score;
   }
 }

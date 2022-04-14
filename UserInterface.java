@@ -85,7 +85,7 @@ public class UserInterface {
           category = scanner.nextLine();
         }
 
-        whiskyJournal.createEntry(name, abv, category);
+        whiskyJournal.createEntry(name, category, abv);
       }  
 
       else if (action.equalsIgnoreCase("ENTRIES")) {

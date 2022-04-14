@@ -73,12 +73,6 @@ public class UserInterface {
           name = scanner.nextLine();
         }
 
-        // get age
-        System.out.print("Age: ");
-        if (scanner.hasNextLine()) {
-          age = Integer.parseInt(scanner.nextLine());
-        }
-        
         // get name
         System.out.print("Alcohol %: ");
         if (scanner.hasNextLine()) {
@@ -91,8 +85,7 @@ public class UserInterface {
           category = scanner.nextLine();
         }
 
-        System.out.println(); 
-        whiskyJournal.createEntry(name, age, abv, category);
+        whiskyJournal.createEntry(name, abv, category);
       }  
 
       else if (action.equalsIgnoreCase("ENTRIES")) {

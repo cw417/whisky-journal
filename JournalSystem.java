@@ -15,8 +15,8 @@ public class JournalSystem {
 
       this.entries = new ArrayList<Entry>();
       
-      // create whiskies
-      Whisky rb12 = new Whisky("Redbreast 12", "Irish", 12, 40.00); 
+      // create whiskies for testing
+      Whisky rb12 = new Whisky("Redbreast 12", "Irish", 40.00); 
 
       // add entries
       entries.add(new Entry(rb12, generateIdNumber()));
@@ -33,10 +33,13 @@ public class JournalSystem {
 
     /**
      * Create a new entry and add to entries array
+     * @param name name of the whisky
+     * @param category category of the whisky (Scotch, Irish, Bourbon, etc...)
+     * @param double alcohol % of the whisky
      * @return true if entry created successfully, else false
      */
-    public void createEntry(String name, int age, double abv, String category) {
-      Whisky whisky = new Whisky(name, category, age, abv);
+    public void createEntry(String name, String category, double abv) {
+      Whisky whisky = new Whisky(name, category, abv);
       Entry newEntry = new Entry(whisky, generateIdNumber());
       entries.add(newEntry);
       System.out.println("Created entry: ");

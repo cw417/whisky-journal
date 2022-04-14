@@ -3,9 +3,11 @@ public class Whisky {
   private String name;
   private String category;
   private double abv;
-  private int age;
+  private int inventory;
 
-  Whisky(String name) {
+  // constructors
+
+  Whisky(String name, int inventory) {
     this.name = name;
   }
 
@@ -15,28 +17,25 @@ public class Whisky {
     this.abv = abv;
   }
 
-  Whisky(String name, String category, int age, double abv) {
-    this.name = name;
-    this.category = category;
-    this.abv = abv;
-    this.age = age;
-  }
+  // getters
 
   public String getName() {
-    return name;
+    return this.name;
   }
 
   public String getCategory() {
-    return category;
+    return this.category;
   }
 
   public double getAbv() {
-    return abv;
+    return this.abv;
   }
 
-  public int getAge() {
-    return age;
+  public int getInventory() {
+    return this.inventory;
   }
+
+  // setters
 
   public void setName(String name) {
     this.name = name;
@@ -50,13 +49,20 @@ public class Whisky {
     this.abv = abv;
   }
 
-  public void setAge(int age) {
-    this.age = age;
+  public void setInventory(int num) {
+    this.inventory = num;
   }
+
+  public void incrementInventory() {
+    this.inventory++;
+  }
+
+  // comparison methods
 
   /**
    * Returns true if two whiskies have the same name.
    * @param other other whisky to compare
+   * @return true if names are equal
    */
   public boolean equals(Whisky other) {
     return (this.name.equals(other.getName()));

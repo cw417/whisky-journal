@@ -1,8 +1,11 @@
+# Adding Entries:
+
 entry
 Redbreast 12
 40
 Irish
 
+addingentry
 entry
 Clynelish 14
 46
@@ -17,5 +20,26 @@ entry
 Woodford Reserve Double Oaked
 45.2
 Bourbon
+
+# Testing:
+
+## Test no name string
+entry
+
+40
+Irish
+
+## test no abv string
+entry
+Jameson
+
+Irish
+
+## test no category string
+entry
+Jameson
+40
+
+# Print entries
 
 entries

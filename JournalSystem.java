@@ -44,7 +44,7 @@ public class JournalSystem {
      * @param id id of entry to return
      * @return returns entry with matching id
      */
-    public Entry findEntry(int id) {
+    public Entry findEntry(int id) throws EntryNotFoundException {
       Entry entry = null;
       //find entry
       for (Entry e: entries) {
@@ -82,7 +82,7 @@ public class JournalSystem {
      * @param abv
      * @return true if name and category are not empty, and abv is a number
      */
-    public boolean validInfo(String name, String category, String abv) {
+    public boolean validInfo(String name, String category, String abv) throws InvalidInfoException {
       // check that a valid number is entered
       try{
         Double.parseDouble(abv);
@@ -127,14 +127,16 @@ public class JournalSystem {
     }
 }
 
-class EntryNotFoundException extends RuntimeException {
+// exceptions
+
+class EntryNotFoundException extends Exception {
 
   EntryNotFoundException(String message) {
     super(message);
   }
 }
 
-class InvalidInfoException extends RuntimeException {
+class InvalidInfoException extends Exception {
 
   InvalidInfoException(String message) {
     super(message);

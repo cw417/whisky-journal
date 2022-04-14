@@ -12,15 +12,7 @@ public class JournalSystem {
     private int idNumber = 0;
 
     public JournalSystem() {
-
       this.entries = new ArrayList<Entry>();
-      
-      // create whiskies for testing
-      Whisky rb12 = new Whisky("Redbreast 12", "Irish", 40.00); 
-
-      // add entries
-      entries.add(new Entry(rb12, generateIdNumber()));
-
     }
 
     /**

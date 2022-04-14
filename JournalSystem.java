@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /*
- * Models a simple CLI journal
+ * Models a simple CLI journal and inventory system for whisky.
  */
 public class JournalSystem {
 
@@ -115,6 +115,9 @@ public class JournalSystem {
       System.out.println();
     }
 
+    /**
+     * Print help menu with commands.
+     */
     public void printHelpMenu() {
       System.out.println("\nCOMMANDS:\n");
       System.out.println("addinv    -  add item to invenory");

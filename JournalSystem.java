@@ -132,14 +132,14 @@ public class JournalSystem {
 
 // exceptions
 
-class EntryNotFoundException extends Exception {
+class EntryNotFoundException extends RuntimeException {
 
   EntryNotFoundException(String message) {
     super(message);
   }
 }
 
-class InvalidInfoException extends Exception {
+class InvalidInfoException extends RuntimeException {
 
   InvalidInfoException(String message) {
     super(message);

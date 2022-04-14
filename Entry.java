@@ -93,6 +93,9 @@ public class Entry
    * Prints object as formatted string.
    */
   public void print() {
+   System.out.printf(
+     "\nName: %s \nABV: %.2f \nCategory: %s \nDate: %s",
+      whisky.getName(), whisky.getAbv(), whisky.getCategory(), this.date);
   }
 
   /*

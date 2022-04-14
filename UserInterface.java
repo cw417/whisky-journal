@@ -63,8 +63,7 @@ public class UserInterface {
       else if (action.equalsIgnoreCase("ENTRY")) {
 
         String name = "";
-        int age = 0;
-        double abv = 0.0;
+        String abv = "";
         String category = "";
 
         // get name
@@ -73,10 +72,10 @@ public class UserInterface {
           name = scanner.nextLine();
         }
 
-        // get name
+        // get abv
         System.out.print("Alcohol %: ");
         if (scanner.hasNextLine()) {
-          abv = Double.parseDouble(scanner.nextLine());
+          abv = scanner.nextLine();
         }
 
         // get category
@@ -85,33 +84,40 @@ public class UserInterface {
           category = scanner.nextLine();
         }
 
-        whiskyJournal.createEntry(name, category, abv);
+        try {
+          whiskyJournal.validInfo(name, category, abv);
+          whiskyJournal.createEntry(name, category, abv);
+        }
+        catch (InvalidInfoException ex) {
+          System.out.println(ex.getMessage());
+        }
       }  
 
       else if (action.equalsIgnoreCase("ENTRIES")) {
         whiskyJournal.printEntries();
       }
 
-      else if (action.equalsIgnoreCase("ADDNOTES")) {
-        
-        String id = "";
+     // TODO: Work on process for adding notes
+     // else if (action.equalsIgnoreCase("ADDNOTES")) {
+     //   
+     //   String id = "";
 
-        // search by id or name
-        System.out.print("Enter ID#: ");
-        if (scanner.hasNextLine()) {
-          id = scanner.nextLine();
-        }
-        try{
-          // need to convert to add info
-          // will pass in strings to be added to each section
-          // need to get nose, palate, finish in loops
-          // then add them to string arrays
-          whiskyJournal.addInfo(Integer.parseInt(id));
-        }
-        catch (EntryNotFoundException ex) {
-          System.err.print(ex);
-        }
-      }
+     //   // search by id or name
+     //   System.out.print("Enter ID#: ");
+     //   if (scanner.hasNextLine()) {
+     //     id = scanner.nextLine();
+     //   }
+     //   try{
+     //     // need to convert to add info
+     //     // will pass in strings to be added to each section
+     //     // need to get nose, palate, finish in loops
+     //     // then add them to string arrays
+     //     whiskyJournal.addInfo(Integer.parseInt(id));
+     //   }
+     //   catch (EntryNotFoundException ex) {
+     //     System.err.print(ex);
+     //   }
+     // }
 
       // help menu
 

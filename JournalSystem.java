@@ -38,12 +38,13 @@ public class JournalSystem {
      * @param double alcohol % of the whisky
      * @return true if entry created successfully, else false
      */
-    public void createEntry(String name, String category, double abv) {
-      Whisky whisky = new Whisky(name, category, abv);
+    public void createEntry(String name, String category, String abv) {
+      Whisky whisky = new Whisky(name, category, Double.parseDouble(abv));
       Entry newEntry = new Entry(whisky, generateIdNumber());
       entries.add(newEntry);
       System.out.println("Created entry: ");
       newEntry.print();
+      System.out.println();
     }
 
     /**
@@ -77,7 +78,35 @@ public class JournalSystem {
      */
     public void addInfo(int id, String nose, String palate, String finish) {
       // add info with entry add methods
-      Entry entry = findEntry(id);
+      //Entry entry = findEntry(id);
+    }
+
+    /**
+     * Checks to make sure info passed in is valid.
+     * Returns true if name and category are not empty, 
+     * and abv is able to be converted to a double.
+     * @param name
+     * @param category
+     * @param abv
+     * @return true if name and category are not empty, and abv is a number
+     */
+    public boolean validInfo(String name, String category, String abv) {
+      // check that a valid number is entered
+      try{
+        Double.parseDouble(abv);
+      }
+      catch (NumberFormatException ex) {
+        throw new InvalidInfoException("Please enter a valid alcohol %");
+      }
+
+      // check that no info is blank
+      if (name.equals("")) { throw new InvalidInfoException("Please enter a name"); }
+      if (category.equals("")) { throw new InvalidInfoException("Please enter a category"); }
+      if (abv.equals("")) { throw new InvalidInfoException("Please enter an alcohol %"); }
+
+      // if no exceptions thrown, reutrn true
+      return true;
+
     }
 
     /**
@@ -86,7 +115,7 @@ public class JournalSystem {
     public void printEntries() {
       for (Entry e: entries) {
         e.print();
-        e.printNotes();
+        //e.printNotes();
         System.out.println();
       }
       System.out.println();
@@ -96,6 +125,13 @@ public class JournalSystem {
 class EntryNotFoundException extends RuntimeException {
 
   EntryNotFoundException(String message) {
+    super(message);
+  }
+}
+
+class InvalidInfoException extends RuntimeException {
+
+  InvalidInfoException(String message) {
     super(message);
   }
 }

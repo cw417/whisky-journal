@@ -29,6 +29,10 @@ public class Entry
     return this.score;
   }
 
+  public void setScore(int score) {
+    this.score = score;
+  }
+
   public LocalDate getDate() {
     return this.date;
   }
@@ -57,13 +61,6 @@ public class Entry
     return this.id;
   }
 
-  // setters
-
-
-  public void setScore(int score) {
-    this.score = score;
-  }
-
   // add info methods
 
   public void addMisc(String info) {
@@ -85,8 +82,6 @@ public class Entry
   public void addNotes(String info) {
     this.notes.add(info);
   }
-
-  // misc methods
 
   /*
    * Prints object as formatted string.

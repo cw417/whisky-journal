@@ -9,7 +9,7 @@ public class UserInterface {
     System.out.println("Enter \"help\" to see available commands.");
     System.out.println();
 
-    JournalSystem whiskyJournal = new JournalSystem();
+    JournalSystem journal = new JournalSystem();
     Inventory inventory = new Inventory();
 
     Scanner scanner = new Scanner(System.in);
@@ -85,8 +85,8 @@ public class UserInterface {
         }
 
         try {
-          whiskyJournal.validInfo(name, category, abv);
-          whiskyJournal.createEntry(name, category, abv);
+          journal.validInfo(name, category, abv);
+          journal.createEntry(name, category, abv);
         }
         catch (InvalidInfoException ex) {
           System.out.println(ex.getMessage());
@@ -94,7 +94,7 @@ public class UserInterface {
       }  
 
       else if (action.equalsIgnoreCase("ENTRIES")) {
-        whiskyJournal.printEntries();
+        journal.printEntries();
       }
 
      // TODO: Work on process for adding notes
@@ -112,7 +112,7 @@ public class UserInterface {
      //     // will pass in strings to be added to each section
      //     // need to get nose, palate, finish in loops
      //     // then add them to string arrays
-     //     whiskyJournal.addInfo(Integer.parseInt(id));
+     //     system.addInfo(Integer.parseInt(id));
      //   }
      //   catch (EntryNotFoundException ex) {
      //     System.err.print(ex);
@@ -122,14 +122,7 @@ public class UserInterface {
       // help menu
 
       else if (action.equalsIgnoreCase("HELP")) {
-        System.out.println("\nCOMMANDS:\n");
-        System.out.println("addinv    -  add item to invenory");
-        System.out.println("addnotes  -  add notes to existing entry");
-        System.out.println("entries   -  print entries");
-        System.out.println("entry     -  create new entry");
-        System.out.println("help      -  access this menu");
-        System.out.println("q/quit    -  exit the program");
-        System.out.println("printinv  -  print inventory");
+        journal.printHelpMenu();
       }
 
       System.out.print("\n>");

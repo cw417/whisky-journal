@@ -8,4 +8,14 @@ Clynelish 14
 46
 Scotch
 
+entry
+Glenfarclas 12
+43
+Scotch
+
+entry
+Woodford Reserve Double Oaked
+45.2
+Bourbon
+
 entries

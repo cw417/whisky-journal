@@ -22,11 +22,11 @@ public class Entry
   // getters
 
   public Whisky getWhisky() {
-    return whisky;
+    return this.whisky;
   }
 
   public int getScore() {
-    return score;
+    return this.score;
   }
 
   public LocalDate getDate() {
@@ -34,27 +34,27 @@ public class Entry
   }
 
   public ArrayList<String> getMisc() {
-    return misc;
+    return this.misc;
   }
 
   public ArrayList<String> getNose() {
-    return nose;
+    return this.nose;
   }
 
   public ArrayList<String> getPalate() {
-    return palate;
+    return this.palate;
   }
 
   public ArrayList<String> getFinish() {
-    return finish;
+    return this.finish;
   }
 
   public ArrayList<String> getNotes() {
-    return notes;
+    return this.notes;
   }
 
   public int getId() {
-    return id;
+    return this.id;
   }
 
   // setters
@@ -67,25 +67,24 @@ public class Entry
   // add info methods
 
   public void addMisc(String info) {
-    misc.add(info);
+    this.misc.add(info);
   }
 
   public void addNose(String info) {
-    nose.add(info);
+   this. nose.add(info);
   }
 
   public void addPalate(String info) {
-    palate.add(info);
+    this.palate.add(info);
   }
 
   public void addFinish(String info) {
-    finish.add(info);
+    this.finish.add(info);
   }
 
   public void addNotes(String info) {
-    notes.add(info);
+    this.notes.add(info);
   }
-
 
   // misc methods
 
@@ -93,9 +92,8 @@ public class Entry
    * Prints object as formatted string.
    */
   public void print() {
-   System.out.printf(
-     "\nName: %s \nABV: %.2f \nCategory: %s \nDate: %s",
-      whisky.getName(), whisky.getAbv(), whisky.getCategory(), this.date);
+    this.whisky.print();
+    System.out.printf("\nDate: %s", this.date);
   }
 
   /*

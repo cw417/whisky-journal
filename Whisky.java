@@ -67,4 +67,15 @@ public class Whisky {
   public boolean equals(Whisky other) {
     return (this.name.equals(other.getName()));
   }
+
+  // misc methods
+
+  /**
+   * Print formatted info.
+   */
+  public void print() {
+    System.out.printf(
+     "\nName: %s \nABV: %.2f \nCategory: %s",
+      this.name, this.abv, this.category);
+  }
 }

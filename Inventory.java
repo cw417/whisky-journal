@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class Inventory {
@@ -48,11 +49,13 @@ public class Inventory {
    * Print formatted inventory list.
    */
   public void print() {
-    System.out.print("\n _____________________\n");
-    System.out.print(  "|_Num_|_____Name______|");
-    for (HashMap.Entry<String,Integer> set: inventory.entrySet()) {
-      System.out.printf("\n|  %-2d | %13s |", set.getValue(), set.getKey());
-    }
-    System.out.print("\n|_____|_______________|\n");
+    System.out.print("\n _____________________________\n");
+    System.out.print(  "|_Num_|_________Name__________|");
+    inventory
+      .entrySet()
+      .stream()
+      .sorted((item1, item2) -> item2.getValue().compareTo(item1.getValue()))
+      .forEach(item -> System.out.printf("\n|  %-2d |  %-20s |", item.getValue(), item.getKey()));
+    System.out.print("\n|_____|_______________________|\n");
   }
 }

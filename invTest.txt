@@ -7,4 +7,13 @@ Yellow Spot
 addinv
 Clynelish 14
 3
+addinv
+Glendronach 12
+6
+
+# test adding multiples
+addinv
+Redbreast 12
+2
+
 printinv

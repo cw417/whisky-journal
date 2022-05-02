@@ -147,7 +147,6 @@ public class UserInterface {
 
       else if (action.equalsIgnoreCase("ENTRIES")) {
         journal.printEntries();
-      }
 
      // TODO: Work on process for adding notes
      // else if (action.equalsIgnoreCase("ADDNOTES")) {
@@ -172,6 +171,7 @@ public class UserInterface {
      // }
 
       // help menu
+      }
 
       else if (action.equalsIgnoreCase("HELP")) {
         journal.printHelpMenu();

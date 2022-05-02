@@ -122,6 +122,7 @@ public class JournalSystem {
       System.out.println("\nCOMMANDS:\n");
       System.out.println("addinv         -  add item to invenory");
       System.out.println("addnotes       -  add notes to existing entry");
+      System.out.println("clearinv       -  clear current inventory");
       System.out.println("entries        -  print entries");
       System.out.println("entry          -  create new entry");
       System.out.println("help           -  access this menu");

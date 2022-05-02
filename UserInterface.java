@@ -13,6 +13,8 @@ public class UserInterface {
     JournalSystem journal = new JournalSystem();
     Inventory inventory = new Inventory();
 
+    boolean inventoryModified = false;
+
     Scanner scanner = new Scanner(System.in);
     System.out.print(">");
 
@@ -32,24 +34,30 @@ public class UserInterface {
 			else if (action.equalsIgnoreCase("Q") || action.equalsIgnoreCase("QUIT")) {
         String save = "";
 
-        System.out.print("Would you like to save the current inventory? (y/n): ");
-        if (scanner.hasNextLine()) {
-          save = scanner.nextLine();
-        }
+        if (inventoryModified) {
+          System.out.print("Would you like to save the current inventory? (y/n): ");
+          if (scanner.hasNextLine()) {
+            save = scanner.nextLine();
+          }
 
-        if (save.equalsIgnoreCase("y") || save.equalsIgnoreCase("yes")) {
-          try {
-            inventory.writeInventory();
-            System.out.println("Saving and exiting.");
+          if (save.equalsIgnoreCase("y") || save.equalsIgnoreCase("yes")) {
+            try {
+              inventory.writeInventory();
+              System.out.println("Saving inventory and exiting.");
+            }
+            catch (IOException e) {
+              e.printStackTrace();
+            }
           }
-          catch (IOException e) {
-            e.printStackTrace();
+          else {
+            System.out.println("Exiting without saving inventory.");
           }
+          return;
         }
-        else {
-          System.out.println("Exiting without saving.");
+				else {
+          System.out.println("Exiting.");
+          return;
         }
-				return;
       }
 
       // inventory actions
@@ -71,6 +79,7 @@ public class UserInterface {
           number = Integer.parseInt(scanner.nextLine());
         }
 
+        inventoryModified = true;
         inventory.addItem(name, number);
       }
 
@@ -90,8 +99,24 @@ public class UserInterface {
           num = Integer.parseInt(scanner.nextLine());
         }
 
+        inventoryModified = true;
         inventory.removeItem(name, num);
 
+      }
+
+      else if (action.equalsIgnoreCase("CLEARINV")) {
+        String clear = "";
+
+        System.out.print("Are you sure you want to clear the inventory? (y/n): ");
+        if (scanner.hasNextLine()) {
+          clear = scanner.nextLine();
+        }
+
+        if (clear.equalsIgnoreCase("y") || clear.equalsIgnoreCase("yes")) {
+          inventoryModified = true;
+          inventory.clearInventory();
+          System.out.println("Clearing inventory.");
+        }
       }
 
       else if (action.equalsIgnoreCase("PRINTINV")) {
@@ -110,6 +135,7 @@ public class UserInterface {
           e.printStackTrace();
         }
       }
+
       // entry actions
 
       else if (action.equalsIgnoreCase("ENTRY")) {

@@ -40,6 +40,10 @@ public class Inventory {
     return inv;
   }
 
+  /**
+   * Writes current inventory to the inventory file located at inventoryPath.
+   * @throws IOException
+   */
   public void writeInventory() throws IOException {
     BufferedWriter bw = new BufferedWriter(new FileWriter(inventoryPath));
     String data = "";
@@ -50,6 +54,13 @@ public class Inventory {
     }
     bw.write(data);
     bw.close();
+  }
+
+  /**
+   * Clears the current inventory.
+   */
+  public void clearInventory() {
+    inventory.clear();
   }
 
   /**

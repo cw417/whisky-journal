@@ -1,20 +1,14 @@
 # whisky-journal
 
-A journal for keeping track of whisky inventory and reviews.
+A command line journal for keeping track of whisky inventory and reviews.
 
 Written in Java.
 
 ## Index
 
-- [TODO](#todo)
 - [Usage](#usage)
+- [TODO](#todo)
 - [Acknowledgments](#acknowledgments)
-
-## TODO
-
-- Implement json support for inventory storage
-- Implement json support for entry storage
-- Change inventory file from test file
 
 ## Usage
 
@@ -31,6 +25,14 @@ Written in Java.
 - `writeinv` - write current inventory to file
 
 ### Journal System
+
+## TODO
+
+- Implement entry storage
+- Implement entry system
+  - add entry with multiple notes
+  - add entry update methods
+- Change inventory file from test file
 
 ## Acknowledgments
 

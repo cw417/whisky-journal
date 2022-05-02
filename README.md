@@ -18,8 +18,7 @@ Written in Java.
 ## Usage
 
 - Enter `help` to see a list of available commands
-- Currently supports adding inventory
-  - Cannot store inventory yet (See TODO)
+- Inventory is stored in a csv file, `inventory.csv`
 
 ### Inventory System
 
@@ -27,6 +26,7 @@ Written in Java.
 - `reminv` - remove or decrement inventory total for an item
 - `printinv` - print inventory
 - `printinvcount` - print inventory, sorted by count
+- `writeinv` - write current inventory to file
 
 ### Journal System
 

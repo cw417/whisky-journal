@@ -24,6 +24,7 @@ Written in Java.
 ### Inventory System
 
 - `addinv` - add item to invenory
+- `reminv` - remove or decrement inventory total for an item
 - `printinv` - print inventory
 - `printinvcount` - print inventory, sorted by count
 

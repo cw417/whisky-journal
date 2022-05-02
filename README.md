@@ -14,6 +14,7 @@ Written in Java.
 
 - Implement json support for inventory storage
 - Implement json support for entry storage
+- Change inventory file from test file
 
 ## Usage
 

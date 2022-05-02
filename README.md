@@ -12,6 +12,13 @@ Written in Java.
 
 ## Usage
 
+- To run, please compile and run the java files:
+
+  ```bash
+  javac *.java
+  java UserInterface
+  ```
+
 - Enter `help` to see a list of available commands
 - Inventory is stored in a csv file, `inventory.csv`
 

@@ -1,12 +1,13 @@
 # whisky-journal
 
-A journal for keeping notes on whisky.
+A journal for keeping track of whisky inventory and reviews.
 
 Written in Java.
 
 ## Index
 
 - [TODO](#todo)
+- [Usage](#usage)
 - [Acknowledgments](#acknowledgments)
 
 ## TODO
@@ -14,10 +15,19 @@ Written in Java.
 - Implement json support for inventory storage
 - Implement json support for entry storage
 
-## Testing
+## Usage
 
-- To enable permisson for running the script, run `chmod 700 test.sh`
-- To test, run `./test.sh`
+- Enter `help` to see a list of available commands
+- Currently supports adding inventory
+  - Cannot store inventory yet (See TODO)
+
+### Inventory System
+
+- `addinv` - add item to invenory
+- `printinv` - print inventory
+- `printinvcount` - print inventory, sorted by count
+
+### Journal System
 
 ## Acknowledgments
 

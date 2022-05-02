@@ -48,9 +48,11 @@ public class Inventory {
    * Print formatted inventory list.
    */
   public void print() {
+    System.out.print("\n _____________________\n");
+    System.out.print(  "|_Num_|_____Name______|");
     for (HashMap.Entry<String,Integer> set: inventory.entrySet()) {
-      System.out.printf("\n%-2d %s", set.getValue(), set.getKey());
+      System.out.printf("\n|  %-2d | %13s |", set.getValue(), set.getKey());
     }
-    System.out.println();
+    System.out.print("\n|_____|_______________|\n");
   }
 }

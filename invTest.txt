@@ -1,0 +1,7 @@
+addinv
+Redbreast 12
+2
+addinv
+Yellow Spot
+10
+printinv

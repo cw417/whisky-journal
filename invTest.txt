@@ -19,6 +19,4 @@ Redbreast 12
 
 # test printing
 printinv
-name
-printinv
-count
+printinvcount

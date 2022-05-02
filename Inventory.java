@@ -1,4 +1,3 @@
-import java.util.Comparator;
 import java.util.HashMap;
 
 public class Inventory {
@@ -52,11 +51,13 @@ public class Inventory {
   
   /**
    * Print formatted inventory list.
+   * Prints by name as the default.
+   * Prints by count if type == 1.
    */
-  public void print(String type) {
+  public void print(int type) {
     System.out.print("\n _____________________________\n");
     System.out.print(  "|_Num_|_________Name__________|");
-    if (type.equalsIgnoreCase("count")) { printByCount(); }
+    if (type == 1) { printByCount(); }
     else { printByName(); }
     System.out.print("\n|_____|_______________________|\n");
   }

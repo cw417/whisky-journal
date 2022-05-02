@@ -128,6 +128,8 @@ public class JournalSystem {
       System.out.println("q/quit         -  exit the program");
       System.out.println("printinv       -  print inventory");
       System.out.println("printinvcount  -  print inventory by descending count");
+      System.out.println("reminv         -  remove or decrement inventory total for an item");
+
     }
 }
 

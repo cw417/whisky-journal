@@ -6,7 +6,7 @@ import java.io.FileReader;
 public class Inventory {
 
   private HashMap<String,Integer> inventory;
-  private String inventoryPath = "inventory.csv";
+  private String inventoryPath = "test/inventory.csv";
 
   Inventory() {
     inventory = readInventory(inventoryPath);
@@ -46,23 +46,29 @@ public class Inventory {
    * @param name name of item to be added
    * @param number number of item to be added
    */
-  public void addItem(String name, int number) {
+  public void addItem(String name, int num) {
     if (inventory.containsKey(name)) {
-      int newCount = inventory.get(name) + number;
+      int newCount = inventory.get(name) + num;
       inventory.put(name, newCount);
+      System.out.printf("New total: %d\n", newCount);
     }
     else {
-      inventory.put(name, number);
+      inventory.put(name, num);
+      System.out.printf("Item added: %s, %d\n", name, num);
     }
   }
 
   /**
    * Decrement number of item in inventory by 1.
-   * @param name name of item to be decremented
+   * @param name name of item to be decreased
+   * @param number number of item to be removed from current total 
    */
-  public void decrementItem(String name) {
-    int total = inventory.get(name);
-    inventory.put(name, total--);
+  public void removeItem(String name, int num) {
+    if (!inventory.keySet().contains(name)) { System.out.printf("%s could not be found.", name); return; }
+    int newTotal = inventory.get(name) - num;
+    if (newTotal < 0) { System.out.printf("Inventory cannot go below 0.\nCurrent inventory: %d\n", inventory.get(name)); return;}
+    inventory.put(name, newTotal);
+    System.out.printf("New total: %d\n", newTotal);
   }
 
   /**

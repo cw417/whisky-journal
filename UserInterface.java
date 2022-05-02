@@ -54,6 +54,26 @@ public class UserInterface {
         inventory.addItem(name, number);
       }
 
+      else if (action.equalsIgnoreCase("REMINV")) {
+        String name = "";
+        int num = 0;
+
+        // get name
+        System.out.print("Name: ");
+        if (scanner.hasNextLine()) {
+          name = scanner.nextLine();
+        }
+
+        // get number
+        System.out.print("Number: ");
+        if (scanner.hasNextLine()) {
+          num = Integer.parseInt(scanner.nextLine());
+        }
+
+        inventory.removeItem(name, num);
+
+      }
+
       else if (action.equalsIgnoreCase("PRINTINV")) {
         inventory.print(0);
       }

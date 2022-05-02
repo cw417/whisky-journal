@@ -25,7 +25,13 @@ public class Inventory {
    */
   // TODO: check if item already exists in inventory
   public void addItem(String name, int number) {
-    inventory.put(name, number);
+    if (inventory.containsKey(name)) {
+      int newCount = inventory.get(name) + number;
+      inventory.put(name, newCount);
+    }
+    else {
+      inventory.put(name, number);
+    }
   }
 
   /**
@@ -58,4 +64,6 @@ public class Inventory {
       .forEach(item -> System.out.printf("\n|  %-2d |  %-20s |", item.getValue(), item.getKey()));
     System.out.print("\n|_____|_______________________|\n");
   }
+
+  
 }

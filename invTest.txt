@@ -17,3 +17,6 @@ Redbreast 12
 2
 
 printinv
+name
+printinv
+count

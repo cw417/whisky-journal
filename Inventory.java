@@ -53,15 +53,28 @@ public class Inventory {
   /**
    * Print formatted inventory list.
    */
-  public void print() {
+  public void print(String type) {
     System.out.print("\n _____________________________\n");
     System.out.print(  "|_Num_|_________Name__________|");
+    if (type.equalsIgnoreCase("count")) { printByCount(); }
+    else { printByName(); }
+    System.out.print("\n|_____|_______________________|\n");
+  }
+
+  private void printByName() {
+    inventory
+      .entrySet()
+      .stream()
+      .sorted((item1, item2) -> item1.getKey().compareTo(item2.getKey()))
+      .forEach(item -> System.out.printf("\n|  %-2d |  %-20s |", item.getValue(), item.getKey()));
+  }
+
+  private void printByCount() {
     inventory
       .entrySet()
       .stream()
       .sorted((item1, item2) -> item2.getValue().compareTo(item1.getValue()))
       .forEach(item -> System.out.printf("\n|  %-2d |  %-20s |", item.getValue(), item.getKey()));
-    System.out.print("\n|_____|_______________________|\n");
   }
 
 

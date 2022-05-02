@@ -55,7 +55,15 @@ public class UserInterface {
       }
 
       else if (action.equalsIgnoreCase("PRINTINV")) {
-        inventory.print();
+        String type = "";
+
+        // get name
+        System.out.print("Sort by count or name (default): ");
+        if (scanner.hasNextLine()) {
+          type = scanner.nextLine();
+        }
+        
+        inventory.print(type);
       }
 
       // entry actions

@@ -120,13 +120,14 @@ public class JournalSystem {
      */
     public void printHelpMenu() {
       System.out.println("\nCOMMANDS:\n");
-      System.out.println("addinv    -  add item to invenory");
-      System.out.println("addnotes  -  add notes to existing entry");
-      System.out.println("entries   -  print entries");
-      System.out.println("entry     -  create new entry");
-      System.out.println("help      -  access this menu");
-      System.out.println("q/quit    -  exit the program");
-      System.out.println("printinv  -  print inventory");
+      System.out.println("addinv         -  add item to invenory");
+      System.out.println("addnotes       -  add notes to existing entry");
+      System.out.println("entries        -  print entries");
+      System.out.println("entry          -  create new entry");
+      System.out.println("help           -  access this menu");
+      System.out.println("q/quit         -  exit the program");
+      System.out.println("printinv       -  print inventory");
+      System.out.println("printinvcount  -  print inventory by descending count");
     }
 }
 

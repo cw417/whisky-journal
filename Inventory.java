@@ -1,11 +1,35 @@
+import java.io.IOException;
 import java.util.HashMap;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class Inventory {
 
   private HashMap<String,Integer> inventory;
+  private String inventoryPath = "inventory.csv";
 
   Inventory() {
-    inventory = new HashMap<String,Integer>();
+    inventory = readInventory(inventoryPath);
+    //inventory = new HashMap<String,Integer>();
+  }
+
+  public HashMap<String,Integer> readInventory(String path) {
+
+    HashMap<String,Integer> inv = new HashMap<String,Integer>();
+    String line = "";
+
+    try {
+      BufferedReader br = new BufferedReader(new FileReader(path));
+
+      while ((line = br.readLine()) != null) {
+        String[] data = line.split(",");
+        inv.put(data[0], Integer.parseInt(data[1]));
+      }
+    }
+    catch (IOException ex) {
+      ex.printStackTrace();
+    }
+    return inv;
   }
 
   /**
@@ -77,6 +101,5 @@ public class Inventory {
       .sorted((item1, item2) -> item2.getValue().compareTo(item1.getValue()))
       .forEach(item -> System.out.printf("\n|  %-2d |  %-20s |", item.getValue(), item.getKey()));
   }
-
 
 }

@@ -23,7 +23,6 @@ public class Inventory {
    * @param name name of item to be added
    * @param number number of item to be added
    */
-  // TODO: check if item already exists in inventory
   public void addItem(String name, int number) {
     if (inventory.containsKey(name)) {
       int newCount = inventory.get(name) + number;
@@ -65,5 +64,5 @@ public class Inventory {
     System.out.print("\n|_____|_______________________|\n");
   }
 
-  
+
 }

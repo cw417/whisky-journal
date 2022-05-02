@@ -4,4 +4,7 @@ Redbreast 12
 addinv
 Yellow Spot
 10
+addinv
+Clynelish 14
+3
 printinv

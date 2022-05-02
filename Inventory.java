@@ -67,6 +67,11 @@ public class Inventory {
     if (!inventory.keySet().contains(name)) { System.out.printf("%s could not be found.", name); return; }
     int newTotal = inventory.get(name) - num;
     if (newTotal < 0) { System.out.printf("Inventory cannot go below 0.\nCurrent inventory: %d\n", inventory.get(name)); return;}
+    if (newTotal == 0) {
+      System.out.printf("Removing %s.\n", name); 
+      inventory.remove(name);
+      return;
+    }
     inventory.put(name, newTotal);
     System.out.printf("New total: %d\n", newTotal);
   }

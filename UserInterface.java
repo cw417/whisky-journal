@@ -30,6 +30,25 @@ public class UserInterface {
       // misc functionality actions
 
 			else if (action.equalsIgnoreCase("Q") || action.equalsIgnoreCase("QUIT")) {
+        String save = "";
+
+        System.out.print("Would you like to save the current inventory? (y/n): ");
+        if (scanner.hasNextLine()) {
+          save = scanner.nextLine();
+        }
+
+        if (save.equalsIgnoreCase("y") || save.equalsIgnoreCase("yes")) {
+          try {
+            inventory.writeInventory();
+            System.out.println("Saving and exiting.");
+          }
+          catch (IOException e) {
+            e.printStackTrace();
+          }
+        }
+        else {
+          System.out.println("Exiting without saving.");
+        }
 				return;
       }
 

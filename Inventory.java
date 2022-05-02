@@ -1,7 +1,10 @@
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class Inventory {
 
@@ -9,27 +12,44 @@ public class Inventory {
   private String inventoryPath = "test/inventory.csv";
 
   Inventory() {
-    inventory = readInventory(inventoryPath);
+    try {
+      inventory = readInventory(inventoryPath);
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
     //inventory = new HashMap<String,Integer>();
   }
 
-  public HashMap<String,Integer> readInventory(String path) {
+  /**
+   * Reads file located at inventoryPath.
+   * Returns map containing the inventory data from the file.
+   * @param path path to inventory file
+   * @return map containing file data
+   */
+  public HashMap<String,Integer> readInventory(String path) throws IOException {
 
     HashMap<String,Integer> inv = new HashMap<String,Integer>();
     String line = "";
+    BufferedReader br = new BufferedReader(new FileReader(path));
 
-    try {
-      BufferedReader br = new BufferedReader(new FileReader(path));
-
-      while ((line = br.readLine()) != null) {
-        String[] data = line.split(",");
-        inv.put(data[0], Integer.parseInt(data[1]));
-      }
-    }
-    catch (IOException ex) {
-      ex.printStackTrace();
+    while ((line = br.readLine()) != null) {
+      String[] data = line.split(",");
+      inv.put(data[0], Integer.parseInt(data[1]));
     }
     return inv;
+  }
+
+  public void writeInventory() throws IOException {
+    BufferedWriter bw = new BufferedWriter(new FileWriter(inventoryPath));
+    String data = "";
+    for (Iterator<String> it = inventory.keySet().iterator(); it.hasNext();) {
+      String name = (String) it.next();
+      int num = inventory.get(name);
+      data += String.format("%s,%d\n", name, num);
+    }
+    bw.write(data);
+    bw.close();
   }
 
   /**

@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -82,6 +83,14 @@ public class UserInterface {
         inventory.print(1);
       }
 
+      else if (action.equalsIgnoreCase("WRITEINV")) {
+        try {
+          inventory.writeInventory();
+        }
+        catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
       // entry actions
 
       else if (action.equalsIgnoreCase("ENTRY")) {

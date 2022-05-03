@@ -34,6 +34,8 @@ A command line journal for keeping track of whisky inventory and reviews
 
 ## TODO
 
+- Fix error handling procedures
+
 - Implement entry storage
 - Implement entry system
   - add entry with multiple notes

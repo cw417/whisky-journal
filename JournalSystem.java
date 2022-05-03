@@ -31,6 +31,7 @@ public class JournalSystem {
      * @return true if entry created successfully, else false
      */
     public void createEntry(String name, String category, String abv) {
+      if (!validInfo(name, category, abv)) { return; }
       Whisky whisky = new Whisky(name, category, Double.parseDouble(abv));
       Entry newEntry = new Entry(whisky, generateIdNumber());
       entries.add(newEntry);

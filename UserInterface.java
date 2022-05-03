@@ -23,8 +23,7 @@ public class UserInterface {
 
 			String action = scanner.nextLine();
 			
-			if (action == null || action.equals("")) 
-			{
+			if (action == null || action.equals("")) {
 				System.out.print("\n>");
 				continue;
 			}
@@ -96,7 +95,7 @@ public class UserInterface {
         inventory.deleteItem(name);
         
       }
-      
+
       else if (action.equalsIgnoreCase("REMINV")) {
         String name = "";
         int num = 0;
@@ -176,7 +175,6 @@ public class UserInterface {
         }
 
         try {
-          journal.validInfo(name, category, abv);
           journal.createEntry(name, category, abv);
         }
         catch (InvalidInfoException ex) {

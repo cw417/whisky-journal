@@ -1,8 +1,6 @@
 # whisky-journal
 
-A command line journal for keeping track of whisky inventory and reviews.
-
-Written in Java.
+A command line journal for keeping track of whisky inventory and reviews
 
 ## Index
 
@@ -26,6 +24,7 @@ Written in Java.
 
 - `addinv` - add item to invenory
 - `clearinv` - clear current inventory
+- `delinv` -  delete item from inventory
 - `printinv` - print inventory
 - `printinvcount` - print inventory, sorted by count
 - `reminv` - remove or decrement inventory total for an item

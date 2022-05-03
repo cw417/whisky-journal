@@ -60,6 +60,7 @@ public class Inventory {
    * Clears the current inventory.
    */
   public void clearInventory() {
+    System.out.println("Clearing inventory.");
     inventory.clear();
   }
 
@@ -112,6 +113,7 @@ public class Inventory {
    * @param name name of item to be deleted
    */
   public void deleteItem(String name) {
+    if (!inventory.containsKey(name)) { System.out.printf("%s could not be found.", name); return; }
     inventory.remove(name);
   }
   

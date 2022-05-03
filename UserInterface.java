@@ -83,6 +83,20 @@ public class UserInterface {
         inventory.addItem(name, number);
       }
 
+      else if (action.equalsIgnoreCase("DELINV")) {
+        String name = "";
+
+        // get name
+        System.out.print("Name: ");
+        if (scanner.hasNextLine()) {
+          name = scanner.nextLine();
+        }
+
+        inventoryModified = true;
+        inventory.deleteItem(name);
+        
+      }
+      
       else if (action.equalsIgnoreCase("REMINV")) {
         String name = "";
         int num = 0;
@@ -115,7 +129,6 @@ public class UserInterface {
         if (clear.equalsIgnoreCase("y") || clear.equalsIgnoreCase("yes")) {
           inventoryModified = true;
           inventory.clearInventory();
-          System.out.println("Clearing inventory.");
         }
       }
 

@@ -37,6 +37,7 @@ public class Inventory {
       String[] data = line.split(",");
       inv.put(data[0], Integer.parseInt(data[1]));
     }
+    br.close();
     return inv;
   }
 

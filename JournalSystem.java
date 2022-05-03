@@ -104,6 +104,7 @@ public class JournalSystem {
         returnList.add(next);
         next = scanner.nextLine();
       }
+      scanner.close();
       return returnList;
     }
 

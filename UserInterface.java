@@ -158,7 +158,12 @@ public class UserInterface {
             id = scanner.nextLine();
           }
 
-          journal.addInfo(id);
+          try {
+            journal.addInfo(id);
+          }
+          catch (EntryNotFoundException e) {
+            System.out.println(e.getMessage());
+          }
         }
 
         else if (action.equalsIgnoreCase("ENTRY")) {
@@ -242,9 +247,10 @@ public class UserInterface {
 
       scanner.close();
 
-    } catch (NumberFormatException e) {
+    } 
+    catch (NumberFormatException e) {
       e.printStackTrace();
-    }
+    } 
   }
   
 }

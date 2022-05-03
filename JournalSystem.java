@@ -104,7 +104,6 @@ public class JournalSystem {
         returnList.add(next);
         next = scanner.nextLine();
       }
-      scanner.close();
       return returnList;
     }
 
@@ -115,9 +114,10 @@ public class JournalSystem {
      * @param id id number to check
      * @return true if id number is valid, else false
      */
-    public boolean validId(String id) {
+    public boolean validId(String id)  throws InvalidInfoException {
       int num = Integer.parseInt(id);
-      return (num >= 0 && num <= entries.get(entries.size()-1).getId());
+      if (num < 0 || num > entries.get(entries.size()-1).getId()) { throw new InvalidInfoException("Invalid ID number"); };
+      return true;
     }
 
     /**
@@ -197,6 +197,10 @@ public class JournalSystem {
 // exceptions
 
 class EntryNotFoundException extends RuntimeException {
+
+  EntryNotFoundException() {
+    super("Entry not found");
+  }
 
   EntryNotFoundException(String message) {
     super(message);

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /*
  * Models a simple CLI journal and inventory system for whisky.
@@ -45,11 +46,11 @@ public class JournalSystem {
      * @param id id of entry to return
      * @return returns entry with matching id
      */
-    public Entry findEntry(int id) throws EntryNotFoundException {
+    public Entry findEntry(String id) throws EntryNotFoundException {
       Entry entry = null;
       //find entry
       for (Entry e: entries) {
-        if (e.getId() == id) {
+        if (e.getId() == Integer.parseInt(id)) {
           entry = e;
         }
       }
@@ -69,9 +70,53 @@ public class JournalSystem {
      * @param id id for entry
      * @return true if info added successfully, else false
      */
-    public void addInfo(int id, String nose, String palate, String finish) {
+    public void addInfo(String id) {
       // add info with entry add methods
-      //Entry entry = findEntry(id);
+      Entry entry = findEntry(id);
+      System.out.println("Nose:");
+      ArrayList<String> noseInfo = getContinuousUserInfo();
+      for (String info: noseInfo) {
+        entry.addNose(info);
+      }
+      System.out.println("Palate:");
+      ArrayList<String> palateInfo = getContinuousUserInfo();
+      for (String info: palateInfo) {
+        entry.addPalate(info);
+      }
+      System.out.println("Finish:");
+      ArrayList<String> finishInfo = getContinuousUserInfo();
+      for (String info: finishInfo) {
+        entry.addFinish(info);
+      }
+      
+    }
+
+    /**
+     * Gets user info until blank is entered.
+     * Returns an arraylist of entered strings.
+     * @return arraylist of entered strings
+     */
+    public ArrayList<String> getContinuousUserInfo() {
+      ArrayList<String> returnList = new ArrayList<>();
+      Scanner scanner = new Scanner(System.in);
+      String next = scanner.nextLine();
+      while (!next.equals("")) {
+        returnList.add(next);
+        next = scanner.nextLine();
+      }
+      return returnList;
+    }
+
+    /**
+     * Checks to see if a given id is valid.
+     * Id must be an integer less than or equal to 
+     * the largest id number in the entries arraylist.
+     * @param id id number to check
+     * @return true if id number is valid, else false
+     */
+    public boolean validId(String id) {
+      int num = Integer.parseInt(id);
+      return (num >= 0 && num <= entries.get(entries.size()-1).getId());
     }
 
     /**
@@ -117,10 +162,21 @@ public class JournalSystem {
     }
 
     /**
+     * Prints a single existing journal entry.
+     * @param id id of entry to print
+     */
+    public void printEntry(String id) {
+      if (!validId(id)) { System.out.printf("%s is not a valid ID.", id); return; }
+      Entry entry = findEntry(id);
+      entry.printReview();
+    }
+
+    /**
      * Print help menu with commands.
      */
     public void printHelpMenu() {
       System.out.println("\nCOMMANDS:\n");
+      System.out.println("addinfo        -  add info to an existing entry");
       System.out.println("addinv         -  add item to invenory");
       System.out.println("addnotes       -  add notes to existing entry");
       System.out.println("clearinv       -  clear current inventory");
@@ -129,6 +185,7 @@ public class JournalSystem {
       System.out.println("entry          -  create new entry");
       System.out.println("help           -  access this menu");
       System.out.println("q/quit         -  exit the program");
+      System.out.println("printentry     -  print entry by id number");
       System.out.println("printinv       -  print inventory");
       System.out.println("printinvcount  -  print inventory by descending count");
       System.out.println("reminv         -  remove or decrement inventory total for an item");

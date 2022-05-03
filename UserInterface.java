@@ -150,6 +150,17 @@ public class UserInterface {
 
       // entry actions
 
+      else if (action.equalsIgnoreCase("ADDINFO")) {
+        String id = "";
+
+        System.out.print("ID: ");
+        if (scanner.hasNextLine()) {
+          id = scanner.nextLine();
+        }
+
+        journal.addInfo(id);
+      }
+
       else if (action.equalsIgnoreCase("ENTRY")) {
 
         String name = "";
@@ -208,6 +219,18 @@ public class UserInterface {
      // }
 
       // help menu
+      }
+
+      else if (action.equalsIgnoreCase("PRINTENTRY")) {
+        String id = "";
+
+        System.out.print("ID: ");
+        if (scanner.hasNextLine()) {
+          id = scanner.nextLine();
+        }
+
+        journal.printEntry(id);
+
       }
 
       else if (action.equalsIgnoreCase("HELP")) {

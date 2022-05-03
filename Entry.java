@@ -17,6 +17,11 @@ public class Entry
     this.whisky = whisky;
     this.date = LocalDate.now();
     this.id = id;
+    this.misc = new ArrayList<>();
+    this.nose = new ArrayList<>();
+    this.palate = new ArrayList<>();
+    this.finish = new ArrayList<>();
+    this.notes = new ArrayList<>();
   }
 
   // getters
@@ -68,7 +73,7 @@ public class Entry
   }
 
   public void addNose(String info) {
-   this. nose.add(info);
+   this.nose.add(info);
   }
 
   public void addPalate(String info) {
@@ -88,14 +93,27 @@ public class Entry
    */
   public void print() {
     this.whisky.print();
-    System.out.printf("\nDate: %s", this.date);
+    System.out.printf("\nDate: %s\nID: %d", this.date, this.id);
+  }
+
+  public String formatInfo(ArrayList<String> list) {
+    String returnString = "";
+    for (String s: list) {
+      returnString += s + ", ";
+    }
+    return returnString.substring(0,returnString.length()-2);
   }
 
   /*
    * Prints tasting notes.
    */
-  public void printNotes() {
+  public void printReview() {
+    this.print();
+    System.out.printf("\nNose: %s\n", formatInfo(nose));
+    System.out.printf("Palate: %s\n", formatInfo(palate));
+    System.out.printf("Finish: %s\n", formatInfo(finish));
   }
+
 
   /**
    * Returns true if two entries have the same id.

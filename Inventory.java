@@ -65,6 +65,12 @@ public class Inventory {
     inventory.clear();
   }
 
+  /**
+   * Searches inventory for items containing a given name.
+   * Prints all results containing the given name.
+   * Matches are case-insensitive.
+   * @param name string to search for in inventory keys
+   */
   public void searchInventory(String name) {
     System.out.print("\n _____________________________\n");
     System.out.print(  "|_Num_|_________Name__________|");

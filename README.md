@@ -28,12 +28,14 @@ A command line journal for keeping track of whisky inventory and reviews
 - `printinv` - print inventory
 - `printinvcount` - print inventory, sorted by count
 - `reminv` - remove or decrement inventory total for an item
+- `searchinv` - search inventory for item(s) by name
 - `writeinv` - write current inventory to file
 
 ### Journal System
 
 ## TODO
 
+- Inventory count update needs to be case-independent
 - Fix error handling procedures
 
 - Implement entry storage

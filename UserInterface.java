@@ -131,6 +131,17 @@ public class UserInterface {
           }
         }
 
+        else if (action.equalsIgnoreCase("SEARCHINV")) {
+          String name = "";
+
+          System.out.print("Name: ");
+          if (scanner.hasNextLine()) {
+            name = scanner.nextLine();
+          }
+
+          inventory.searchInventory(name);
+        }
+
         else if (action.equalsIgnoreCase("PRINTINV")) {
           inventory.print(0);
         }

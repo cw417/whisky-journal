@@ -65,6 +65,17 @@ public class Inventory {
     inventory.clear();
   }
 
+  public void searchInventory(String name) {
+    System.out.print("\n _____________________________\n");
+    System.out.print(  "|_Num_|_________Name__________|");
+    inventory.forEach((k,v) -> {
+      if (k.toLowerCase().contains(name.toLowerCase())) {
+        System.out.printf("\n|  %-2d |  %-20s |", v, k);
+      }
+    });
+    System.out.print("\n|_____|_______________________|\n");
+  }
+
   /**
    * Return number of item in inventory.
    * @param name name of item to search

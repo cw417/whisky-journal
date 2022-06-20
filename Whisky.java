@@ -68,7 +68,7 @@ public class Whisky {
    */
   public void print() {
     System.out.printf(
-     "\nName: %s \nABV: %.2f \nCategory: %s",
+     "\nName: %s \nABV: %.2f \nCategory: %s\n",
       this.name, this.abv, this.category);
   }
 }

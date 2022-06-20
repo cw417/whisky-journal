@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /*
  * Models a simple CLI journal and inventory system for whisky.
@@ -172,6 +174,15 @@ public class JournalSystem {
       entry.printReview();
     }
 
+    /**
+     * Prints entries with matching names.
+     * @param name name to search entry list for
+     */
+    public void searchEntryName(String name) {
+      entries.stream()
+        .filter(entry -> entry.getWhisky().getName().equalsIgnoreCase(name))
+        .forEach(entry -> entry.print());
+    }
 }
 
 // exceptions

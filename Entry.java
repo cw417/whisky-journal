@@ -93,7 +93,7 @@ public class Entry
    */
   public void print() {
     this.whisky.print();
-    System.out.printf("\nDate: %s\nID: %d", this.date, this.id);
+    System.out.printf("Date: %s\nID: %d\n", this.date, this.id);
   }
 
   public String formatInfo(ArrayList<String> list) {
@@ -109,7 +109,7 @@ public class Entry
    */
   public void printReview() {
     this.print();
-    System.out.printf("\nNose: %s\n", formatInfo(nose));
+    System.out.printf("Nose: %s\n", formatInfo(nose));
     System.out.printf("Palate: %s\n", formatInfo(palate));
     System.out.printf("Finish: %s\n", formatInfo(finish));
   }

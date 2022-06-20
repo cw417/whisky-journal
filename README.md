@@ -33,6 +33,8 @@ A command line journal for keeping track of whisky inventory and reviews
 
 ### Journal System
 
+- `searchentryname` - search journal for entries with matching name"
+
 ## TODO
 
 - Inventory count update needs to be case-independent

@@ -241,7 +241,6 @@ public class UserInterface {
           System.out.println("\nCOMMANDS:\n");
           System.out.println("addinfo           -  add info to an existing entry");
           System.out.println("addinv            -  add item to invenory");
-          System.out.println("addnotes          -  add notes to existing entry");
           System.out.println("clearinv          -  clear current inventory");
           System.out.println("delinv            -  delete item from inventory");
           System.out.println("entries           -  print entries");

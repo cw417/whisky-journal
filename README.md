@@ -33,6 +33,10 @@ A command line journal for keeping track of whisky inventory and reviews
 
 ### Journal System
 
+- `addinfo` - add info to an existing entry
+- `entry` - create new entry
+- `entries` - print entries
+- `printentry` - print entry by id number
 - `searchentryname` - search journal for entries with matching name"
 
 ## TODO

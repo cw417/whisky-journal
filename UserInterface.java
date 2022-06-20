@@ -250,7 +250,21 @@ public class UserInterface {
         }
 
         else if (action.equalsIgnoreCase("HELP")) {
-          journal.printHelpMenu();
+          System.out.println("\nCOMMANDS:\n");
+          System.out.println("addinfo        -  add info to an existing entry");
+          System.out.println("addinv         -  add item to invenory");
+          System.out.println("addnotes       -  add notes to existing entry");
+          System.out.println("clearinv       -  clear current inventory");
+          System.out.println("delinv         -  delete item from inventory");
+          System.out.println("entries        -  print entries");
+          System.out.println("entry          -  create new entry");
+          System.out.println("help           -  access this menu");
+          System.out.println("q/quit         -  exit the program");
+          System.out.println("printentry     -  print entry by id number");
+          System.out.println("printinv       -  print inventory");
+          System.out.println("printinvcount  -  print inventory by descending count");
+          System.out.println("reminv         -  remove or decrement inventory total for an item");
+          System.out.println("searchinv      - search inventory for item(s) by name");
         }
 
         System.out.print("\n>");

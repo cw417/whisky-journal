@@ -38,7 +38,6 @@ public class JournalSystem {
       entries.add(newEntry);
       System.out.println("Created entry: ");
       newEntry.print();
-      System.out.println();
     }
 
     /**
@@ -73,6 +72,7 @@ public class JournalSystem {
     public void addInfo(String id) {
       // add info with entry add methods
       Entry entry = findEntry(id);
+      entry.print();
       System.out.println("Nose:");
       ArrayList<String> noseInfo = getContinuousUserInfo();
       for (String info: noseInfo) {
@@ -156,10 +156,7 @@ public class JournalSystem {
     public void printEntries() {
       for (Entry e: entries) {
         e.print();
-        //e.printNotes();
-        System.out.println();
       }
-      System.out.println();
     }
 
     /**

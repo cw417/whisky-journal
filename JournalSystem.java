@@ -29,6 +29,7 @@ public class JournalSystem {
      * @return arraylist containing file data
      */
     public ArrayList<Entry> readEntries(String path) throws IOException {
+      //TODO: Fix This method
 
       ArrayList<Entry> entries = new ArrayList<Entry>();
       String line = "";

@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 /*
  * Models a simple CLI journal and inventory system for whisky.

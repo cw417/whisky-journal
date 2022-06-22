@@ -9,6 +9,7 @@ import java.io.FileWriter;
 public class Inventory {
 
   private HashMap<String,Integer> inventory;
+  //TODO: change path to 'inventory.csv'
   private String inventoryPath = "test/inventory.csv";
 
   Inventory() {

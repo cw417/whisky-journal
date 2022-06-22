@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-javac *.java && cat test.txt | java UserInterface
+javac *.java && cat test/test.txt | java UserInterface

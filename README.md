@@ -37,7 +37,7 @@ A command line journal for keeping track of whisky inventory and reviews
 - `entry` - create new entry
 - `entries` - print entries
 - `printentry` - print entry by id number
-- `searchentryname` - search journal for entries with matching name"
+- `searchname` - search journal for entries with matching name"
 
 ## TODO
 

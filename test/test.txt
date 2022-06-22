@@ -60,6 +60,10 @@ Jameson
 
 entries
 
-## Test searchEntryName
-searchentryname
+## Test searchName
+searchname
 Redbreast
+
+## Test searchCategory
+searchcat
+Irish

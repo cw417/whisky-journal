@@ -225,7 +225,8 @@ public class UserInterface {
 
         }
 
-        else if (action.equalsIgnoreCase("SEARCHENTRYNAME")) {
+        else if (action.equalsIgnoreCase("SEARCHNAME")) {
+          // search entries for name containing/matching keyword
           String name = "";
 
           System.out.print("Name: ");
@@ -233,7 +234,20 @@ public class UserInterface {
             name = scanner.nextLine();
           }
 
-          journal.searchEntryName(name);
+          journal.searchName(name);
+
+        }
+
+        else if (action.equalsIgnoreCase("SEARCHCAT")) {
+          // search entries for category containing/matching keyword
+          String category = "";
+
+          System.out.print("Category: ");
+          if (scanner.hasNextLine()) {
+            category = scanner.nextLine();
+          }
+
+          journal.searchCategory(category);
 
         }
 
@@ -252,7 +266,7 @@ public class UserInterface {
           System.out.println("printinvcount     -  print inventory by descending count");
           System.out.println("reminv            -  remove or decrement inventory total for an item");
           System.out.println("searchinv         -  search inventory for item(s) by name");
-          System.out.println("searchentryname   -  search journal for entries with matching name");
+          System.out.println("searchname   -  search journal for entries with matching name");
 
         }
 

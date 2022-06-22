@@ -176,9 +176,19 @@ public class JournalSystem {
      * Prints entries with matching names.
      * @param name name to search entry list for
      */
-    public void searchEntryName(String name) {
+    public void searchName(String name) {
       entries.stream()
         .filter(entry -> entry.getWhisky().getName().contains(name))
+        .forEach(entry -> entry.print());
+    }
+
+    /**
+     * Prints entries with matching names.
+     * @param name name to search entry list for
+     */
+    public void searchCategory(String category) {
+      entries.stream()
+        .filter(entry -> entry.getWhisky().getCategory().contains(category))
         .forEach(entry -> entry.print());
     }
 }

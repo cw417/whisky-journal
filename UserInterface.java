@@ -251,6 +251,19 @@ public class UserInterface {
 
         }
 
+        else if (action.equalsIgnoreCase("SEARCHINFO")) {
+          // search entries for info containing/matching keyword
+          String info = "";
+
+          System.out.print("Keyword: ");
+          if (scanner.hasNextLine()) {
+            info = scanner.nextLine();
+          }
+
+          journal.searchInfo(info);
+
+        }
+
         else if (action.equalsIgnoreCase("HELP")) {
           System.out.println("\nCOMMANDS:\n");
           System.out.println("addinfo           -  add info to an existing entry");

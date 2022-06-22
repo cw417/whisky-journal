@@ -178,7 +178,7 @@ public class JournalSystem {
      */
     public void searchEntryName(String name) {
       entries.stream()
-        .filter(entry -> entry.getWhisky().getName().equalsIgnoreCase(name))
+        .filter(entry -> entry.getWhisky().getName().contains(name))
         .forEach(entry -> entry.print());
     }
 }

@@ -40,6 +40,10 @@ entry
 Jameson
 40
 
-# Print entries
+## Print entries
 
 entries
+
+## Test searchEntryName
+searchentryname
+Redbreast

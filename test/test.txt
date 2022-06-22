@@ -39,31 +39,55 @@ Bourbon
 # Testing:
 ** Leave spaces where they are - used for blank entries
 
-## Test no name string
+## Entry Testing
+
+### Test no name string
 entry
 
 40
 Irish
 
-## test no abv string
+### Test no abv string
 entry
 Jameson
 
 Irish
 
-## test no category string
+### Test no category string
 entry
 Jameson
 40
 
-## Print entries
+### Test print all entries
 
 entries
 
-## Test searchName
+## Test entry search methods
+
+### Test searchName
 searchname
 Redbreast
 
-## Test searchCategory
+### Test searchCategory
 searchcat
 Irish
+
+## Entry Info Tests
+
+addinfo
+0
+butter
+baking spice
+shortbread
+nutmeg
+cinnamon
+clove
+buttery
+
+buttercream
+light sherry
+baking spice
+
+### Test print entry
+printentry
+0

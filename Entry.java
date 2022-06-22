@@ -101,7 +101,8 @@ public class Entry
     for (String s: list) {
       returnString += s + ", ";
     }
-    return returnString.substring(0,returnString.length()-2);
+    returnString = (returnString.length() > 0) ? returnString.substring(0,returnString.length()-2) : "";
+    return returnString;
   }
 
   /*

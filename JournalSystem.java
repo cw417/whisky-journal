@@ -173,7 +173,7 @@ public class JournalSystem {
     }
 
     /**
-     * Prints entries with matching names.
+     * Prints entries with containing/matching names.
      * @param name name to search entry list for
      */
     public void searchName(String name) {
@@ -183,8 +183,8 @@ public class JournalSystem {
     }
 
     /**
-     * Prints entries with matching names.
-     * @param name name to search entry list for
+     * Prints entries with containing/matching category.
+     * @param category category to search entry list for
      */
     public void searchCategory(String category) {
       entries.stream()

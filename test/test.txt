@@ -25,7 +25,6 @@ Redbreast Lustau
 46
 Irish
 
-
 entry
 Redbreast 15 
 46
@@ -36,7 +35,9 @@ Woodford Reserve Double Oaked
 45.2
 Bourbon
 
+
 # Testing:
+** Leave spaces where they are - used for blank entries
 
 ## Test no name string
 entry

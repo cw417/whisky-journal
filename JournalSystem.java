@@ -99,7 +99,7 @@ public class JournalSystem {
     public ArrayList<String> getContinuousUserInfo() {
       ArrayList<String> returnList = new ArrayList<>();
       Scanner scanner = new Scanner(System.in);
-      String next = scanner.nextLine();
+      String next = (scanner.hasNextLine()) ? scanner.nextLine() : "";
       while (!next.equals("")) {
         returnList.add(next);
         next = scanner.nextLine();

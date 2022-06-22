@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,8 +15,31 @@ public class JournalSystem {
     // create variable to use for generating order numbers
     private int idNumber = 0;
 
+    // set path to save journal entries
+    private String journalPath = "test/journal.txt"
+
     public JournalSystem() {
       this.entries = new ArrayList<Entry>();
+    }
+
+    /**
+     * Reads file located at journalPath.
+     * Returns arraylist of entries from the file.
+     * @param path path to entries file
+     * @return arraylist containing file data
+     */
+    public ArrayList<Entry> readEntries(String path) throws IOException {
+
+      ArrayList<Entry> entries = new ArrayList<Entry>();
+      String line = "";
+      BufferedReader br = new BufferedReader(new FileReader(path));
+
+      /* while ((line = br.readLine()) != null) {
+        String[] data = line.split(",");
+        inv.put(data[0], Integer.parseInt(data[1]));
+      }
+      br.close();
+      return inv; */
     }
 
     /**
@@ -186,6 +212,19 @@ public class JournalSystem {
     public void searchCategory(String category) {
       entries.stream()
         .filter(entry -> entry.getWhisky().getCategory().contains(category))
+        .forEach(entry -> entry.print());
+    }
+
+    /**
+     * Prints entries with with nose/palate/finish containing the given keyword.
+     * @param info keyword to search entry nose, palate, and finish for
+     */
+    public void searchInfo(String info) {
+      entries.stream()
+        .filter(entry -> 
+          entry.getNose().contains(info) || 
+          entry.getPalate().contains(info) || 
+          entry.getFinish().contains(info))
         .forEach(entry -> entry.print());
     }
 }

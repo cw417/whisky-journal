@@ -73,15 +73,24 @@ public class Entry
   }
 
   public void addNose(String info) {
-   this.nose.add(info);
+    String[] noseInfo = info.split(", ");
+    for (String item: noseInfo) {
+      this.nose.add(item);
+    }
   }
 
   public void addPalate(String info) {
-    this.palate.add(info);
+    String[] palateInfo = info.split(", ");
+    for (String item: palateInfo) {
+      this.palate.add(item);
+    }
   }
 
   public void addFinish(String info) {
-    this.finish.add(info);
+    String[] finishInfo = info.split(", ");
+    for (String item: finishInfo) {
+      this.finish.add(item);
+    }
   }
 
   public void addNotes(String info) {
@@ -114,7 +123,6 @@ public class Entry
     System.out.printf("Palate: %s\n", formatInfo(palate));
     System.out.printf("Finish: %s\n", formatInfo(finish));
   }
-
 
   /**
    * Returns true if two entries have the same id.

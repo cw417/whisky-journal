@@ -76,17 +76,9 @@ Irish
 
 addinfo
 0
-butter
-baking spice
-shortbread
-nutmeg
-cinnamon
-clove
-buttery
-
-buttercream
-light sherry
-baking spice
+vanilla, baking spice
+butter, shortbread, clove, nutmeg
+buttercream, light oak
 
 ### Test print entry
 printentry

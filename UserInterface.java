@@ -163,14 +163,32 @@ public class UserInterface {
 
         else if (action.equalsIgnoreCase("ADDINFO")) {
           String id = "";
+          String nose = "";
+          String palate= "";
+          String finish = "";
 
           System.out.print("ID: ");
           if (scanner.hasNextLine()) {
             id = scanner.nextLine();
           }
 
+          System.out.print("Nose: ");
+          if (scanner.hasNextLine()) {
+            nose = scanner.nextLine();
+          }
+
+          System.out.print("Palate: ");
+          if (scanner.hasNextLine()) {
+            palate = scanner.nextLine();
+          }
+
+          System.out.print("Finish: ");
+          if (scanner.hasNextLine()) {
+            finish = scanner.nextLine();
+          }
+
           try {
-            journal.addInfo(id);
+            journal.addInfo(id, nose, palate, finish);
           }
           catch (EntryNotFoundException e) {
             System.out.println(e.getMessage());

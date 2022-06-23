@@ -16,7 +16,7 @@ public class JournalSystem {
     private int idNumber = 0;
 
     // set path to save journal entries
-    private String journalPath = "test/journal.txt"
+    private String journalPath = "test/journal.txt";
 
     public JournalSystem() {
       this.entries = new ArrayList<Entry>();
@@ -34,6 +34,7 @@ public class JournalSystem {
       ArrayList<Entry> entries = new ArrayList<Entry>();
       String line = "";
       BufferedReader br = new BufferedReader(new FileReader(path));
+      return entries;
 
       /* while ((line = br.readLine()) != null) {
         String[] data = line.split(",");
@@ -96,42 +97,12 @@ public class JournalSystem {
      * @param id id for entry
      * @return true if info added successfully, else false
      */
-    public void addInfo(String id) {
-      // add info with entry add methods
+    public void addInfo(String id, String nose, String palate, String finish) {
       Entry entry = findEntry(id);
       entry.print();
-      System.out.println("Nose:");
-      ArrayList<String> noseInfo = getContinuousUserInfo();
-      for (String info: noseInfo) {
-        entry.addNose(info);
-      }
-      System.out.println("Palate:");
-      ArrayList<String> palateInfo = getContinuousUserInfo();
-      for (String info: palateInfo) {
-        entry.addPalate(info);
-      }
-      System.out.println("Finish:");
-      ArrayList<String> finishInfo = getContinuousUserInfo();
-      for (String info: finishInfo) {
-        entry.addFinish(info);
-      }
-      
-    }
-
-    /**
-     * Gets user info until blank is entered.
-     * Returns an arraylist of entered strings.
-     * @return arraylist of entered strings
-     */
-    public ArrayList<String> getContinuousUserInfo() {
-      ArrayList<String> returnList = new ArrayList<>();
-      Scanner scanner = new Scanner(System.in);
-      String next = (scanner.hasNextLine()) ? scanner.nextLine() : "";
-      while (!next.equals("")) {
-        returnList.add(next);
-        next = scanner.nextLine();
-      }
-      return returnList;
+      entry.addNose(nose);
+      entry.addPalate(palate);
+      entry.addFinish(finish);
     }
 
     /**

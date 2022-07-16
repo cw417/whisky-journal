@@ -297,7 +297,7 @@ public class UserInterface {
           System.out.println("printinvcount     -  print inventory by descending count");
           System.out.println("reminv            -  remove or decrement inventory total for an item");
           System.out.println("searchinv         -  search inventory for item(s) by name");
-          System.out.println("searchname   -  search journal for entries with matching name");
+          System.out.println("searchname        -  search journal for entries with matching name");
 
         }
 

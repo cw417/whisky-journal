@@ -77,7 +77,7 @@ public class Inventory {
     System.out.print(  "|_Num_|_________Name__________|");
     inventory.forEach((k,v) -> {
       if (k.toLowerCase().contains(name.toLowerCase())) {
-        System.out.printf("\n|  %-2d |  %-20s |", v, k);
+        System.out.printf("\n|  %-2d |  %-25s |", v, k);
       }
     });
     System.out.print("\n|_____|_______________________|\n");
@@ -142,27 +142,35 @@ public class Inventory {
    * Prints by count if type == 1.
    */
   public void print(int type) {
-    System.out.print("\n _____________________________\n");
-    System.out.print(  "|_Num_|_________Name__________|");
+    System.out.print("\n __________________________________\n");
+    System.out.print(  "|_Num_|___________Name_____________|");
     if (type == 1) { printByCount(); }
     else { printByName(); }
-    System.out.print("\n|_____|_______________________|\n");
+    System.out.print("\n|_____|____________________________|\n");
   }
 
+  /**
+   * Prints formatted items organized alphabetically.
+   * Item is passed in with name as key and count as value.
+   */
   private void printByName() {
     inventory
       .entrySet()
       .stream()
       .sorted((item1, item2) -> item1.getKey().compareTo(item2.getKey()))
-      .forEach(item -> System.out.printf("\n|  %-2d |  %-20s |", item.getValue(), item.getKey()));
+      .forEach(item -> System.out.printf("\n|  %-2d |  %-25s |", item.getValue(), item.getKey()));
   }
 
+  /**
+   * Prints formatted items arranged by descending count.
+   * Item is passed in with name as key and count as value.
+   */
   private void printByCount() {
     inventory
       .entrySet()
       .stream()
       .sorted((item1, item2) -> item2.getValue().compareTo(item1.getValue()))
-      .forEach(item -> System.out.printf("\n|  %-2d |  %-20s |", item.getValue(), item.getKey()));
+      .forEach(item -> System.out.printf("\n|  %-2d |  %-25s |", item.getValue(), item.getKey()));
   }
 
 }
